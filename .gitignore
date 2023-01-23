@@ -1,0 +1,6 @@
+.idea/**
+admin-server/target/**
+eureka-server/target/**
+ms-customers/target/**
+ms-orders/target/**
+ms-deliveries/target/**

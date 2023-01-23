@@ -1,0 +1,25 @@
+server:
+    port: 8081
+
+eureka:
+    instance:
+        lease-expiration-duration-in-seconds: 10
+        healthUrl: /actuator/health
+        metadata-map:
+          startup: ${random.int} #needed to trigger info and endpoint update after restart
+    client:
+        registry-fetch-interval-seconds: 5
+        service-url:
+          defaultZone: ${EUREKA_SERVICE_URL:http://localhost:9090/eureka/}
+
+management:
+  endpoints:
+    web:
+      exposure:
+          include: "*"
+  endpoint:
+    health:
+        show-details: always
+spring:
+  application:
+    name: 'admin server'
